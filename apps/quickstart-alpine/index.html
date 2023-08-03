@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>Web5</h1>
+    <section id="did-create">
+      <h2>Create a Decentralized Identifier (DID)</h2>
+      <div class="input">
+        <pre>
+          <code>
+            let web5;
+            let myDid;
+            const { web5, did: myDid } = await Web5.connect();
+          </code>
+        </pre>
+        <button>Run!</button>
+      </div>
+      <div class="output" x-data="{ did: null}">
+        <details>
+          <summary>
+            <code>Hit "Run" above to create DID</code>
+          </summary>
+          <textarea readonly class="code-output"></textarea>
+        </details>
+      </div>
+    </section>
+  </main>
+</body>
+<script type="module">
+  import { Web5 } from 'https://cdn.jsdelivr.net/npm/@tbd54566975/web5@0.7.11/dist/browser.mjs';
+
+    const { web5, did: myDid } = await Web5.connect();
+    console.log(web5)
+  
+
+</script>
+</html>
