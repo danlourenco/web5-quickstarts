@@ -1,0 +1,14 @@
+{
+  "name": "web5-quickstarts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "vue:dev": "pnpm --filter quickstart-vue dev",
+    "alpine:dev": "pnpm --filter quickstart-alpine dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
