@@ -17,6 +17,8 @@ const props = defineProps<Props>()
                 <slot name="code"></slot>
             </code>
         </pre>
+
+    <slot></slot>
         <button @click="$emit('run-step')">Run!</button>
         <details :open="props.output ? true : false">
           <summary>

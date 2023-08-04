@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import  QuickstartStep from '../components/QuickstartStep.vue';
 import { useWeb5Store } from '../stores/web5';
-
+import { ref } from 'vue';
 const web5Store = useWeb5Store();
+const textData = ref('');
+
+const handleTextRecordSubmission = () => {
+  debugger;
+  web5Store.createTextRecord(textData.value);
+}
 </script>
 
 <template>
@@ -25,9 +31,10 @@ const web5Store = useWeb5Store();
   </QuickstartStep>
 
   <QuickstartStep 
-    @run-step="web5Store.createDid" 
+    @run-step="handleTextRecordSubmission" 
     :success="Created!" 
-    :output="web5Store.did">
+    cta="..." 
+    :output="web5Store.record">
     <template #heading>Write some data</template>
     <template #code>
       <br />
@@ -44,6 +51,7 @@ const web5Store = useWeb5Store();
           });
           <br />
     </template>
+    <input type="text" value="TestData"/>
   </QuickstartStep>
   </main>
 </template>
