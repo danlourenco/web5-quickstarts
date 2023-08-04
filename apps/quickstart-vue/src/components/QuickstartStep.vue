@@ -1,6 +1,8 @@
 <script setup lang="ts">
 interface Props {
+  cta: string;
   output: string;
+  success: string;
 }
 const props = defineProps<Props>()
 
@@ -18,7 +20,12 @@ const props = defineProps<Props>()
         <button @click="$emit('run-step')">Run!</button>
         <details :open="props.output ? true : false">
           <summary>
-            <code>Hit "Run" above to create DID</code>
+            <code>
+              <span v-if="!props.output">{{  props.cta }}
+              </span>
+              <span v-else>{{ props.success }}
+              </span>
+            </code>
           </summary>
           <textarea :value="props.output"></textarea>
         </details>
